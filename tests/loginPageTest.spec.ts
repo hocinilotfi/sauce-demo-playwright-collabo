@@ -1,6 +1,6 @@
 // tests/login.spec.ts
 import { test, expect } from '@playwright/test';
-  import { LoginPage } from '../pages/LoginPage';
+import { LoginPage } from '../pages/LoginPage';
 
 test.describe('Login Tests', () => {
   test('correct username && correct password', async ({ page }) => {
