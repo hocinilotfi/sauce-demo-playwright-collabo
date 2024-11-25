@@ -13,7 +13,7 @@ test.describe('Login Tests', () => {
   test('correct username && incorrect password', async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.navigate();
-    await loginPage.login('standard_user', 'wrong_password');   
+    await loginPage.login('standard_user', 'wrong_password');
     const errorMessage = await loginPage.getErrorMessage();
     expect(errorMessage).toContain('Epic sadface: Username and password do not match any user in this service');
   });
