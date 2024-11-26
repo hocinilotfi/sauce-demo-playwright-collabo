@@ -7,8 +7,8 @@ export class ProductPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.addToCartButton = page.locator('button#add-to-cart'); 
-    this.cartCount = page.locator('.cart-count'); 
+    this.addToCartButton = page.locator('button#add-to-cart-sauce-labs-backpack');
+
   }
 
 
@@ -21,8 +21,5 @@ export class ProductPage {
   }
 
 
-  async getCartCount(): Promise<number> {
-    const cartCountText = await this.cartCount.textContent(); 
-    return cartCountText ? parseInt(cartCountText.trim()) : 0;
-  }
+
 }
