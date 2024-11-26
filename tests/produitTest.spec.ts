@@ -14,7 +14,7 @@ test.describe('Inventory Tests', () => {
 
         const produit = new ProductPage(page);
         await expect(produit.addToCartButton).toHaveText('Add to cart');
-        await  produit.addProductToCart()
+        await  produit.addProductToCart();
         await  produit.navigate();
       
     });
