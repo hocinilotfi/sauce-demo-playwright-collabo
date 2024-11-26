@@ -3,18 +3,16 @@ import { expect, type Locator, type Page } from '@playwright/test';
 export class ProductPage {
   readonly page: Page;
   readonly addToCartButton: Locator;
-  readonly cartCount: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.addToCartButton = page.locator('button#add-to-cart-sauce-labs-backpack');
-
+    this.addToCartButton = page.locator('button[data-test="add-to-cart-sauce-labs-backpack"]');
   }
 
+  async navigate() {
+    await this.page.goto('https://www.saucedemo.com/cart.html');
+}
 
-  async goto(url: string) {
-    await this.page.goto(url); 
-  }
 
   async addProductToCart() {
     await this.addToCartButton.click(); 
